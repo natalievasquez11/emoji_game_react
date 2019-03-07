@@ -1,0 +1,11 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.emojis {
+    width: 200px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
