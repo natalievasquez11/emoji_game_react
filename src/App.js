@@ -81,10 +81,11 @@ handlePlay = event => {
     return (
       <div>
         <Navbar 
-        score={this.state.score}
-        bestScore={this.state.bestScore}
-        message={this.state.message}
-        resultClass={this.resultClass}/>
+          score={this.state.score}
+          bestScore={this.state.bestScore}
+          message={this.state.message}
+          resultClass={this.resultClass}
+        />
         <Jumbotron />
         <Main images={this.state.imageArr}
           handlePlay={this.handlePlay}
