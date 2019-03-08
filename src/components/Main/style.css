@@ -3,6 +3,14 @@ img {
     height: 150px;
 }
 
+.correct {
+    color: turquoise;
+}
+
+.incorrect {
+    color: red;
+}
+
 .emojis {
     width: 200px;
     padding: 0px;

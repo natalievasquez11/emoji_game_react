@@ -24,8 +24,11 @@ class App extends Component {
       tongue_Winking, upside_Down],
       clickArr: [],
       score: 0,
-      bestScore: 0
+      bestScore: 0,
+      message: `Start by clicking emojis`
   };
+
+  resultClass = "";
 
   componentDidMount() {
     this.setState({
@@ -36,15 +39,42 @@ class App extends Component {
 handlePlay = event => {
   const name = event.target.name;
   const tempArr = this.state.clickArr;
-  tempArr.push(name);
+  let emojiExists = false;
 
-  this.setState({
-    imageArr: shuffle(this.state.imageArr),
-    clickArr: tempArr
-  });
-  
+  for (var x = 0; x < tempArr.length; x++) {
+    if (name === tempArr[x]) {
+      let newState = {
+        imageArr: shuffle(this.state.imageArr),
+        clickArr: [],
+        score: 0,
+        message: "Incorrect Guess!"
+      };
+
+      this.resultClass = "incorrect";
+      emojiExists = true;
+
+      if (this.state.score > this.state.bestScore) {
+        newState.bestScore = this.state.score;
+      }
+
+      this.setState(newState);
+      break;
+    } 
+  }
+
+  if (!emojiExists) {
+    this.resultClass = "correct";
+    tempArr.push(name);
+
+    this.setState({
+      imageArr: shuffle(this.state.imageArr),
+      score: this.state.score + 1,
+      clickArr: tempArr,
+      message: "Correct Guess!"
+    });
+  }
+
   console.log(this.state.clickArr);
-
 }
 
   render() {
@@ -52,7 +82,9 @@ handlePlay = event => {
       <div>
         <Navbar 
         score={this.state.score}
-        bestScore={this.state.bestScore}/>
+        bestScore={this.state.bestScore}
+        message={this.state.message}
+        resultClass={this.resultClass}/>
         <Jumbotron />
         <Main images={this.state.imageArr}
           handlePlay={this.handlePlay}

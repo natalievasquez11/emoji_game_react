@@ -8,7 +8,7 @@ function Navbar(props) {
       <div className="nav-wrapper">
           <ul>
             <li><a href="/" className="home">Emoji Game</a></li>
-            <li>Start by clicking emojis!</li> 
+            <li className={props.resultClass}>{props.message}</li> 
             <li>Points: {props.score} | Best Score: {props.bestScore}</li>
           </ul>
         </div>

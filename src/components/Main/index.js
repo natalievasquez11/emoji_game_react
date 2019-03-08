@@ -5,7 +5,7 @@ function Main(props) {
   return(
     <div className="container">
       <div className="row">
-        <ul className="col m8 offset-m2">
+        <ul className="col m10 offset-m1">
           {props.images.map(result => (
             <li key={result} className="emojis">
               <img name={result} alt={result} src={result} onClick={props.handlePlay}/>
