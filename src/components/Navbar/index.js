@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="grey darken-3">
       <div className="nav-wrapper">
           <ul>
-            <li>Emoji Game</li>
+            <li><a href="/" className="home">Emoji Game</a></li>
             <li>Start by clicking emojis!</li> 
             <li>Points: 0 | Best Score: 0</li>
           </ul>

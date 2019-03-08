@@ -8,7 +8,7 @@ function Main(props) {
         <ul className="col m8 offset-m2">
           {props.images.map(result => (
             <li key={result} className="emojis">
-              <img alt={result} src={result} name={result} onClick={props.handlePlay}/>
+              <img name={result} alt={result} src={result} onClick={props.handlePlay}/>
             </li>
           ))}  
         </ul>

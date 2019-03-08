@@ -21,7 +21,10 @@ class App extends Component {
   state = {
     imageArr: [angry, confounded, flushed, halo, hushed, 
       loudly_Crying, mad, sunglasses, tears, tightly_Closed, 
-      tongue_Winking, upside_Down]
+      tongue_Winking, upside_Down],
+      clickArr: [],
+      score: 0,
+      bestScore: 0
   };
 
   componentDidMount() {
@@ -31,11 +34,17 @@ class App extends Component {
   }
 
 handlePlay = event => {
-
+  const name = event.target.name;
+  const tempArr = this.state.clickArr;
+  tempArr.push(name);
 
   this.setState({
-    imageArr: shuffle(this.state.imageArr)
+    imageArr: shuffle(this.state.imageArr),
+    clickArr: tempArr
   });
+  
+  console.log(this.state.clickArr);
+
 }
 
   render() {
