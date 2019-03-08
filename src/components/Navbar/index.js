@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <div className="navbar-fixed">
       <nav className="grey darken-3">
@@ -9,7 +9,7 @@ function Navbar() {
           <ul>
             <li><a href="/" className="home">Emoji Game</a></li>
             <li>Start by clicking emojis!</li> 
-            <li>Points: 0 | Best Score: 0</li>
+            <li>Points: {props.score} | Best Score: {props.bestScore}</li>
           </ul>
         </div>
       </nav>

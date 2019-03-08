@@ -50,12 +50,14 @@ handlePlay = event => {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar 
+        score={this.state.score}
+        bestScore={this.state.bestScore}/>
         <Jumbotron />
         <Main images={this.state.imageArr}
           handlePlay={this.handlePlay}
         />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }
